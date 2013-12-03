@@ -1,0 +1,13 @@
+--- origsrc/libwps-0.2.9/inc/libwps/WPSDocument.h	2013-05-25 05:59:45.000000000 -0500
++++ src/libwps-0.2.9/inc/libwps/WPSDocument.h	2013-09-02 21:11:40.409408200 -0500
+@@ -49,8 +49,8 @@ Works documents.
+ class WPSDocument
+ {
+ public:
+-	static WPSLIB WPSConfidence isFileFormatSupported(WPXInputStream *input);
+-	static WPSLIB WPSResult parse(WPXInputStream *input, WPXDocumentInterface *documentInterface);
++	static WPSConfidence isFileFormatSupported(WPXInputStream *input);
++	static WPSResult parse(WPXInputStream *input, WPXDocumentInterface *documentInterface);
+ };
+ 
+ #endif /* WPSDOCUMENT_H */

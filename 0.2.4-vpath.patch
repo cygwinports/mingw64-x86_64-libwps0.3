@@ -1,0 +1,12 @@
+--- origsrc/libwpd-0.9.4/docs/doxygen/Makefile.am	2011-08-31 13:42:54.000000000 -0500
++++ src/libwpd-0.9.4/docs/doxygen/Makefile.am	2011-11-29 18:45:32.973480900 -0600
+@@ -16,7 +16,8 @@ uninstall-am:
+ all:
+ 	test -f header.html.in || $(LN_S) $(srcdir)/header.html.in ./
+ 	test -f footer.html.in || $(LN_S) $(srcdir)/footer.html.in ./
+-	doxygen $(srcdir)/doxygen.cfg
++	test -f doxygen.cfg || $(SED) -e "s|\.\./\.\./|$(top_srcdir)/|g" $(srcdir)/doxygen.cfg > doxygen.cfg
++	doxygen doxygen.cfg
+ 
+ else
+ 

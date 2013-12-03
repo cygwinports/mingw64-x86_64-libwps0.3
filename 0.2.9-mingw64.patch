@@ -1,0 +1,11 @@
+--- origsrc/libwps-0.2.9/src/lib/WPSCell.h	2013-05-25 05:52:22.000000000 -0500
++++ src/libwps-0.2.9/src/lib/WPSCell.h	2013-12-03 04:02:31.917423700 -0600
+@@ -215,7 +215,7 @@ protected:
+ 			if (diffF < 0) return true;
+ 			if (diffF > 0) return false;
+ 			if (c1.m_cell->m_verticalSet != c2.m_cell->m_verticalSet) return c1.m_cell->m_verticalSet;
+-			return long(c1.m_cell) < long(c2.m_cell);
++			return intptr_t(c1.m_cell) < intptr_t(c2.m_cell);
+ 		}
+ 
+ 		//! the coord to compare
